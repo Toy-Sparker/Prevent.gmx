@@ -34,7 +34,7 @@
     <script>scripts\scrPlayerStepAtk.gml</script>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\fRPM</font>
+    <font>fonts\f8bitpusab</font>
   </fonts>
   <objects name="objects">
     <object>objects\oText</object>
