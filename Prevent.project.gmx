@@ -22,6 +22,7 @@
     <sprite>sprites\sDamage</sprite>
     <sprite>sprites\sPlayerwalkD</sprite>
     <sprite>sprites\sPlayerwalkR</sprite>
+    <sprite>sprites\sPlayerwalkL</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

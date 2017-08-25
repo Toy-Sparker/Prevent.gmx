@@ -61,3 +61,10 @@ if(key_space && distance_to_object(oNpc)<16)
 {
 state = scrPlayerStepTalk;
 }
+
+//  Combat  //
+//Regular Attack
+if(key_attack)
+{
+state = scrPlayerStepAttack;
+}
