@@ -19,6 +19,9 @@
     <sprite>sprites\sElostarg_d</sprite>
     <sprite>sprites\sElostarg_l</sprite>
     <sprite>sprites\sPlayer_d_atk</sprite>
+    <sprite>sprites\sDamage</sprite>
+    <sprite>sprites\sPlayerwalkD</sprite>
+    <sprite>sprites\sPlayerwalkR</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -31,7 +34,7 @@
     </scripts>
     <script>scripts\scrPlayerInput.gml</script>
     <script>scripts\set_text.gml</script>
-    <script>scripts\scrPlayerStepAtk.gml</script>
+    <script>scripts\scrPlayerStepAttack.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f8bitpusab</font>

@@ -25,8 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>walksp = .5;
+            <string>walksp = .25;
+hp = 5;
 image_speed = 0;
+acc = 0.1;
+fric = 0.1;
+target = oPlayer;
 </string>
           </argument>
         </arguments>
@@ -49,8 +53,13 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = x + sign(oPlayer.x - x)*walksp;  
-y = y + sign(oPlayer.y - y)*walksp;
+            <string>if(instance_exists(target))
+{
+x = x + sign(target.x - x)*acc;  
+y = y + sign(target.y - y)*acc;
+}
+
+clamp(acc,0,walksp);
 </string>
           </argument>
         </arguments>
