@@ -23,19 +23,40 @@
     <sprite>sprites\sPlayerwalkD</sprite>
     <sprite>sprites\sPlayerwalkR</sprite>
     <sprite>sprites\sPlayerwalkL</sprite>
+    <sprite>sprites\sPlayerwalkU</sprite>
+    <sprite>sprites\sPlayeratkD</sprite>
+    <sprite>sprites\sPlayeratkU</sprite>
+    <sprite>sprites\sPlayeratkR</sprite>
+    <sprite>sprites\sPlayeratkL</sprite>
+    <sprite>sprites\sElostarg_hurt</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\make_text.gml</script>
-    <script>scripts\scrPlayerStepMove.gml</script>
-    <script>scripts\scrPlayerStepTalk.gml</script>
     <scripts name="scrNPCDialogs">
       <script>scripts\scrNpc1dialog1.gml</script>
     </scripts>
-    <script>scripts\scrPlayerInput.gml</script>
-    <script>scripts\set_text.gml</script>
-    <script>scripts\scrPlayerStepAttack.gml</script>
+    <scripts name="Enemies">
+      <scripts name="AggressiveLost">
+        <script>scripts\scrEnemy1StepHurt.gml</script>
+        <script>scripts\scrEnemy1StepChase.gml</script>
+        <script>scripts\scrEnemy1StepWander.gml</script>
+        <script>scripts\scrEnemy1StepIdle.gml</script>
+      </scripts>
+      <script>scripts\scrCheckTarget.gml</script>
+      <script>scripts\scrEnemyChooseNextState.gml</script>
+    </scripts>
+    <scripts name="Player">
+      <script>scripts\scrPlayerInput.gml</script>
+      <script>scripts\scrPlayerStepMove.gml</script>
+      <script>scripts\scrPlayerStepAttack.gml</script>
+      <script>scripts\scrPlayerStepTalk.gml</script>
+      <script>scripts\scrPlayerFace.gml</script>
+    </scripts>
+    <scripts name="Text">
+      <script>scripts\set_text.gml</script>
+      <script>scripts\make_text.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f8bitpusab</font>
@@ -44,13 +65,17 @@
     <object>objects\oText</object>
     <object>objects\oControl</object>
     <object>objects\oTest1</object>
-    <object>objects\oPlayer</object>
-    <object>objects\parCollide</object>
-    <object>objects\oWall1</object>
-    <object>objects\oNpc</object>
-    <object>objects\oElostarg1</object>
-    <object>objects\oLifeform</object>
     <object>objects\oDamage</object>
+    <objects name="Parents">
+      <object>objects\oLifeform</object>
+      <object>objects\parCollide</object>
+      <object>objects\oNpc</object>
+    </objects>
+    <objects name="Objects">
+      <object>objects\oPlayer</object>
+      <object>objects\oWall1</object>
+      <object>objects\oElostarg1</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>

@@ -76,8 +76,9 @@ alarm[0] = 1;
             <kind>1</kind>
             <string>if(other.id != creator) {
 other.hp -= 1;
+var dir = point_direction(other.x,other.y,x,y)
 with(other){
-        image_blend = c_red;
+motion_add(dir+180,2);
     }
 }
 </string>

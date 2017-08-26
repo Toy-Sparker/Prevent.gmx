@@ -6,13 +6,14 @@ var xmove = (key_right - key_left);
 var ymove = (key_down - key_up);
 
 // Set Direction
-var dir = point_direction(0,0,xmove,ymove);
+dir = point_direction(0,0,xmove,ymove);
 
 // Set the length
 if(xmove == 0 && ymove == 0) {
     len = 0;
 } else {
     len = walksp;
+    scrPlayerFace();
 }
 
 // Set Hsp & Vsp
@@ -47,13 +48,12 @@ y += vsp;
 image_speed = .1;
 if(len == 0) image_index = 0;
 
-// Set Horizontal Sprites
-if(hsp < 0) sprite_index=sPlayer_r;
-if(hsp > 0) sprite_index=sPlayer_l;
-
-// Set Vertical Sprites
-if(vsp > 0) sprite_index=sPlayer_d; 
-if(vsp < 0) sprite_index=sPlayer_u;
+switch(face) {
+case UP:    sprite_index = sPlayerwalkU; break;
+case DOWN:  sprite_index = sPlayerwalkD; break;
+case RIGHT: sprite_index = sPlayerwalkR; break;
+case LEFT:  sprite_index = sPlayerwalkL; break;
+}
 
 //      NPC     //
 //Talk to NPC
@@ -64,7 +64,7 @@ state = scrPlayerStepTalk;
 
 //  Combat  //
 //Regular Attack
-if(key_attack)
+if(mouse_attack)
 {
 state = scrPlayerStepAttack;
 }

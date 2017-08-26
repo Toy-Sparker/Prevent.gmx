@@ -2,7 +2,7 @@
 <sprite>
   <type>0</type>
   <xorig>8</xorig>
-  <yorigin>14</yorigin>
+  <yorigin>15</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
@@ -20,9 +20,9 @@
   <width>16</width>
   <height>30</height>
   <frames>
-    <frame index="0">images\sPlayerwalkD_0.png</frame>
-    <frame index="1">images\sPlayerwalkD_1.png</frame>
-    <frame index="2">images\sPlayerwalkD_2.png</frame>
-    <frame index="3">images\sPlayerwalkD_3.png</frame>
+    <frame index="0">images\sPlayerwalkU_0.png</frame>
+    <frame index="1">images\sPlayerwalkU_1.png</frame>
+    <frame index="2">images\sPlayerwalkU_2.png</frame>
+    <frame index="3">images\sPlayerwalkU_3.png</frame>
   </frames>
 </sprite>
