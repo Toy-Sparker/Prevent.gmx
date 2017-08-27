@@ -12,7 +12,7 @@ if(instance_exists(target)) {
     {
     target = "";
     }
-    } else {
+    } else if(dis > sight) {
     state = scrEnemyChooseNextState;
         }   
     } else {

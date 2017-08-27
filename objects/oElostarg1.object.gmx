@@ -26,15 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-walksp = .5;
+walksp = .25;
 image_speed = 0;
-hp = .25;
+hp = 3;
 atkspd = 5;
 target = oPlayer;
 defaulttarget = oPlayer;
 state = scrEnemy1StepIdle;
-alarm[0]=30*irandom_range(2,4);
-sight = 64;
+alarm[0] = 30*irandom_range(2,4);
+sight = 128;
 targetx = 0;
 targety = 0;
 infight = false;
@@ -61,6 +61,7 @@ infight = false;
           <argument>
             <kind>1</kind>
             <string>///Hurt alarm
+
 </string>
           </argument>
         </arguments>
@@ -110,6 +111,11 @@ infight = false;
 event_inherited();
 script_execute(state);
 speed = max(speed - 0.1, 0)
+atkspd -= 1;
+
+if(state != scrEnemy1StepHurt) {
+alarm[1] = 60;
+}
 </string>
           </argument>
         </arguments>
@@ -132,13 +138,17 @@ speed = max(speed - 0.1, 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(state != scrEnemy1StepHurt) {
+            <string>
+if(state != scrEnemy1StepHurt) {
+    if(atkspd &lt;= 0)
+    {
+    atkspd = 30;
     var dir = point_direction(other.x, other.y, x, y);
     var xdir = lengthdir_x(1, dir);
     var ydir = lengthdir_y(1, dir);
     var damage = instance_create(other.x+xdir, other.y+ydir, oDamage);
     damage.creator = id;
-    
+    }
 }
 </string>
           </argument>
