@@ -29,6 +29,7 @@
     <sprite>sprites\sPlayeratkR</sprite>
     <sprite>sprites\sPlayeratkL</sprite>
     <sprite>sprites\sElostarg_hurt</sprite>
+    <sprite>sprites\sELostarg_die</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

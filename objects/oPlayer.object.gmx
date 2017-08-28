@@ -91,7 +91,7 @@ key_space   =  keyboard_check_pressed(vk_space);
 
 script_execute(state);
 
-speed = max(speed - 0.1,0)
+speed = max(speed - 0.1,0);
 </string>
           </argument>
         </arguments>
@@ -114,9 +114,9 @@ speed = max(speed - 0.1,0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(id != oDamage.creator)
-{
-alarm[0] = 30;
+            <string>if(id != oDamage.creator) {
+hp = hp - 1;
+alarm[0] = 60;
 image_blend = c_red;
 }
 </string>
@@ -146,6 +146,30 @@ image_blend = c_red;
 attacked = false;
 state = scrPlayerStepMove;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(sPixel,0,32,32,hp*2,32,0,c_green,0.5);
+
 </string>
           </argument>
         </arguments>
