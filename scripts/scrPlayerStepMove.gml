@@ -41,9 +41,9 @@ if(place_meeting(x,y+vsp,parCollide))
     }
     vsp = 0;
 }
-y += vsp;
 
-//      Sprites     //
+
+y += vsp;//      Sprites     //
 // Control Speed & Image
 image_speed = .1;
 if(len == 0) image_index = 0;

@@ -76,6 +76,8 @@
       <object>objects\oPlayer</object>
       <object>objects\oWall1</object>
       <object>objects\oElostarg1</object>
+      <object>objects\oElostdie</object>
+      <object>objects\oBleed0</object>
     </objects>
   </objects>
   <rooms name="rooms">
