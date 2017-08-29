@@ -29,6 +29,7 @@ if(place_meeting(x+hsp,y,parCollide))
         x = x + sign(hsp);
     }
     hsp = 0;
+    hspeed = 0;
 }
 x += hsp;
 
@@ -37,9 +38,10 @@ if(place_meeting(x,y+vsp,parCollide))
 {
     while(!place_meeting(x,y+sign(vsp),parCollide))
     {
-        y = y + sign(vsp);    
+        y = y + sign(vsp);
     }
     vsp = 0;
+    vspeed = 0;
 }
 
 

@@ -30,6 +30,7 @@
     <sprite>sprites\sPlayeratkL</sprite>
     <sprite>sprites\sElostarg_hurt</sprite>
     <sprite>sprites\sELostarg_die</sprite>
+    <sprite>sprites\sBar</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
