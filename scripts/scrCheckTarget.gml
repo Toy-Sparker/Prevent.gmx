@@ -1,18 +1,16 @@
 if(instance_exists(target)) {
-    var dis = point_distance(x,y,target.x,target.y);
     if(dis < sight) {
     state = scrEnemy1StepChase;
     targetx = target.x;
     targety = target.y;
+    
+    //Check if infighting is false
     if(infight = false)
     {
     target = defaulttarget;
-    }
-    else
-    {
-    target = "";
-    }
-    } else if(dis > sight) {
+    }  
+    
+    }else if(dis > sight) {
     state = scrEnemyChooseNextState;
         }   
     } else {

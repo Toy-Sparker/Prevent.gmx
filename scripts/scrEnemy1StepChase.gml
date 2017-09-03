@@ -1,5 +1,4 @@
 ///scrEnemy1StepChase();
 scrCheckTarget();
-x = x + sign(targetx - x)*walksp;  
-y = y + sign(targety - y)*walksp;
+mp_potential_step_object(targetx,targety,walksp,parCollide);
 image_blend = c_white;
