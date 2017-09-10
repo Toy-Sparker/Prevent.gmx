@@ -137,7 +137,7 @@ state = scrEnemy1StepIdle;
             <string>///Enemy's Step 
 event_inherited();
 script_execute(state);
-speed = max(speed - 0.1, 0)
+speed = max(speed - 0.1, 0);
 atkspd -= 1;
 
 if(place_meeting(x,y,oDamage)) {
@@ -148,19 +148,19 @@ if(state != scrEnemy1StepHurt) {
 alarm[1] = 60/2;
 }
 
-if(distance_to_object(defaulttarget)&lt;30) {
+if(distance_to_object(target)&lt;30) {
 if(state != scrEnemy1StepHurt) {
     if(atkspd &lt;= 0)
     {
     atkspd = 30;
-    var dir = point_direction(other.x, other.y, x, y);
+    var dir = point_direction(target.x, target.y, x, y);
     var xdir = lengthdir_x(1, dir);
     var ydir = lengthdir_y(1, dir);
     var damage = instance_create(other.x+xdir, other.y+ydir, oDamage);
     damage.creator = id;
     damage.damage = .5;
         }
-}
+    }
 }
 </string>
           </argument>
@@ -190,6 +190,7 @@ infight = true;
 target = instance_find(other,oDamage.creator);
 } else if(oDamage.creator = oPlayer.id) {
 target = defaulttarget;
+infight = false;
 }
 </string>
           </argument>
