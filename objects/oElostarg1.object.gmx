@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>oLifeform</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -30,14 +30,13 @@ image_speed = 0;
 hp = 3;
 atkspd = 5;
 defaulttarget = oPlayer.id;
-target = defaulttarget;
+target = oPlayer.id;
 state = scrEnemy1StepIdle;
 alarm[0] = 30*irandom_range(2,4);
 sight = 128;
 dis = point_distance(x,y,target.x,target.y);
 targetx = 0;
 targety = 0;
-infight = false;
 image_angle = image_angle;
 </string>
           </argument>
@@ -140,8 +139,11 @@ script_execute(state);
 speed = max(speed - 0.1, 0);
 atkspd -= 1;
 
+targetx = target.x;
+targety = target.y;
+
 if(place_meeting(x,y,oDamage)) {
-state = scrEnemy1StepHurt;
+if(id != oDamage.creator) state = scrEnemy1StepHurt;
 }
 
 if(state != scrEnemy1StepHurt) {
@@ -152,11 +154,8 @@ if(distance_to_object(target)&lt;30) {
 if(state != scrEnemy1StepHurt) {
     if(atkspd &lt;= 0)
     {
-    atkspd = 30;
-    var dir = point_direction(target.x, target.y, x, y);
-    var xdir = lengthdir_x(1, dir);
-    var ydir = lengthdir_y(1, dir);
-    var damage = instance_create(other.x+xdir, other.y+ydir, oDamage);
+    atkspd = 30
+    var damage = instance_create(x, y, oDamage);
     damage.creator = id;
     damage.damage = .5;
         }
@@ -186,11 +185,9 @@ if(state != scrEnemy1StepHurt) {
             <kind>1</kind>
             <string>///Collision with Player &amp; Other Enemy objects
 if(oDamage.creator != oPlayer.id &amp;&amp; oDamage.creator != self.id) {
-infight = true;
-target = instance_find(other,oDamage.creator);
+target = other;
 } else if(oDamage.creator = oPlayer.id) {
 target = defaulttarget;
-infight = false;
 }
 </string>
           </argument>

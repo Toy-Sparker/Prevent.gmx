@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>damage = 1;
-knockback = 12;
+knockback = 2;
 creator = noone;
 alarm[0] = 1;
 </string>
@@ -77,11 +77,13 @@ alarm[0] = 1;
             <string>if(other.id != creator) {
 other.hp -= damage;
 
-with(other){
-x = x - lengthdir_x(other.knockback,direction);
-y = y - lengthdir_y(other.knockback,direction);
+with(other) {
+var dir = direction;
+motion_add(dir + 180,other.knockback);
+if(oDamage.creator != oPlayer.id) {
+        target = other;
+        }
     }
-
 }
 </string>
           </argument>
