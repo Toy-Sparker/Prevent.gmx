@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-walksp = .25;
+            <string>walksp = .25;
 image_speed = 0;
 hp = 3;
 atkspd = 5;
@@ -39,6 +38,7 @@ dis = point_distance(x,y,target.x,target.y);
 targetx = 0;
 targety = 0;
 infight = false;
+image_angle = image_angle;
 </string>
           </argument>
         </arguments>

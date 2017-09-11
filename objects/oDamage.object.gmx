@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>damage = 1;
-knockback = 5;
+knockback = 12;
 creator = noone;
 alarm[0] = 1;
 </string>
@@ -76,10 +76,12 @@ alarm[0] = 1;
             <kind>1</kind>
             <string>if(other.id != creator) {
 other.hp -= damage;
-var dir = point_direction(other.x,other.y,x,y)
+
 with(other){
-motion_add(dir+180,2);
+x = x - lengthdir_x(other.knockback,direction);
+y = y - lengthdir_y(other.knockback,direction);
     }
+
 }
 </string>
           </argument>
