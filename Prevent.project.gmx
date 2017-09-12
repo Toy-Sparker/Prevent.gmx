@@ -54,6 +54,7 @@
       <script>scripts\scrPlayerStepAttack.gml</script>
       <script>scripts\scrPlayerStepTalk.gml</script>
       <script>scripts\scrPlayerFace.gml</script>
+      <script>scripts\scrPlayerCollide.gml</script>
     </scripts>
     <scripts name="Text">
       <script>scripts\set_text.gml</script>

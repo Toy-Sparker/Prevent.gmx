@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>oLifeform</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -30,11 +30,10 @@ image_speed = 0;
 hp = 3;
 atkspd = 5;
 defaulttarget = oPlayer.id;
-target = oPlayer.id;
+target = defaulttarget;
 state = scrEnemy1StepIdle;
 alarm[0] = 30*irandom_range(2,4);
 sight = 128;
-dis = point_distance(x,y,target.x,target.y);
 targetx = 0;
 targety = 0;
 image_angle = image_angle;
@@ -137,10 +136,12 @@ state = scrEnemy1StepIdle;
 event_inherited();
 script_execute(state);
 speed = max(speed - 0.1, 0);
-atkspd -= 1;
+atkspd--;
 
-targetx = target.x;
-targety = target.y;
+if(instance_exists(target)) {
+targetx = (target).x;
+targety = (target).y;
+}
 
 if(place_meeting(x,y,oDamage)) {
 if(id != oDamage.creator) state = scrEnemy1StepHurt;
@@ -157,7 +158,7 @@ if(state != scrEnemy1StepHurt) {
     atkspd = 30
     var damage = instance_create(x, y, oDamage);
     damage.creator = id;
-    damage.damage = .5;
+    damage.damage = .25;
         }
     }
 }
@@ -185,7 +186,7 @@ if(state != scrEnemy1StepHurt) {
             <kind>1</kind>
             <string>///Collision with Player &amp; Other Enemy objects
 if(oDamage.creator != oPlayer.id &amp;&amp; oDamage.creator != self.id) {
-target = other;
+target = oDamage.creator;
 } else if(oDamage.creator = oPlayer.id) {
 target = defaulttarget;
 }

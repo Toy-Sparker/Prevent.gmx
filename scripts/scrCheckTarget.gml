@@ -1,9 +1,11 @@
 if(instance_exists(target)) {
-    if(dis < sight) {
+    if(distance_to_object(target) < sight) {
     state = scrEnemy1StepChase;  
-    }else if(dis > sight) {
+    } else if(distance_to_object(target) > sight) {
     state = scrEnemyChooseNextState;
         }   
-    } else {
+    } else if(!instance_exists(target)) && (instance_exists(oPlayer)) {
+    target = defaulttarget
+    } else if(!instance_exists(target)) {
 state = scrEnemyChooseNextState;
 }
